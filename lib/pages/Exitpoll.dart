@@ -48,6 +48,10 @@ class _ExitPollState extends State<ExitPoll> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Image.asset(
+                    'assets/images/vote_hand.png',
+                    width: 240.0,
+                  ),
                   Text(
                     "เลือกตั้ง อบต.",
                     style: TextStyle(fontSize: 30),
@@ -123,13 +127,30 @@ class _ExitPollState extends State<ExitPoll> {
                      )
                    ],
                  ),
-                  TextButton(onPressed: () {
+                  Container(
+                      height: 40.0,
+                      width: 100.0,
+                      //color: Colors.green, // ห้ามกำหนด color ตรงนี้ ถ้าหากกำหนดใน BoxDecoration แล้ว
+                      decoration: BoxDecoration(
+                        color: Colors.teal,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                  child :TextButton(onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Result()),
                     );
 
-                  }, child: Text("ดูผล"))
+                  }, child: Expanded(
+
+                    child: Text("ดูผล",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            backgroundColor: Colors.teal,
+                            )),
+                  ))
+                  )
                 ],
               ),
             ),
